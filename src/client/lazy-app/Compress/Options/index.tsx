@@ -204,9 +204,14 @@ export default class Options extends Component<Props, State> {
               large
             >
               <option value="identity">Original Image</option>
-              {Object.entries(supportedEncoderMap).map(([type, encoder]) => (
-                <option value={type}>{encoder.meta.label}</option>
-              ))}
+              {Object.entries(supportedEncoderMap).map(([type, encoder]) => {
+                if (type === 'browserJPEG' || type === "browserPNG" || type === "mozJPEG") {
+                  return (
+                    <option value={type}>{encoder.meta.label}</option>
+                  )}
+                  return null
+                }
+              )}
             </Select>
           ) : (
             <Select large>
