@@ -54,7 +54,7 @@ export default class App extends Component<Props, State> {
       });
 
     swBridgePromise.then(async ({ offliner, getSharedImage }) => {
-      offliner(this.showSnack);
+      //offliner(this.showSnack);
       if (!this.state.awaitingShareTarget) return;
       const file = await getSharedImage();
       // Remove the ?share-target from the URL
