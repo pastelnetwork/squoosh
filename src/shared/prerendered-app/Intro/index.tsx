@@ -39,7 +39,6 @@ interface Props {
   showSnack?: SnackBarElement['showSnackbar'];
 }
 interface State {
-  fetchingDemoIndex?: number;
   beforeInstallEvent?: BeforeInstallPromptEvent;
   showBlobSVG: boolean;
 }
@@ -175,7 +174,7 @@ export default class Intro extends Component<Props, State> {
 
   render(
     {}: Props,
-    { fetchingDemoIndex, beforeInstallEvent, showBlobSVG }: State,
+    { beforeInstallEvent, showBlobSVG }: State,
   ) {
     return (
       <div class={style.intro}>
